@@ -1,2 +1,2 @@
 # lara-payment
-Paymnet-gateways integration for Laravel framework
+[Payment-gateways](http://github.com/laratalks/payment-gateways) integration for Laravel framework
