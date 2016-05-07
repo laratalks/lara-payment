@@ -7,7 +7,7 @@ use Laratalks\PaymentGateways\Configs\ProviderConfig;
 use Laratalks\PaymentGateways\Configs\ProxyConfig;
 use Laratalks\PaymentGateways\GatewayManager;
 
-class LaraPaymentServiceProvider extends ServiceProvider 
+class LaraPaymentServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -23,7 +23,7 @@ class LaraPaymentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('gateway-manager', function ($app) {
+        $this->app->singleton('laratalks.gateway.manager', function ($app) {
              return new GatewayManager($this->buildConfigs($app['config']['payment-gateways']));
         });
     }
@@ -89,12 +89,12 @@ class LaraPaymentServiceProvider extends ServiceProvider
                 $config->addProvider($providerConfig);
             }
         }
-        
+
         return $config;
     }
 
     public function provides()
     {
-        return ['gateway-manager'];
+        return ['laratalks.gateway.manager'];
     }
 }

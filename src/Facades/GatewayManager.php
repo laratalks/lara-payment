@@ -5,5 +5,5 @@ use Illuminate\Support\Facades\Facade;
 
 class GatewayManager extends Facade
 {
-    protected static function getFacadeAccessor() { return 'gateway-manager'; }
+    protected static function getFacadeAccessor() { return 'laratalks.gateway.manager'; }
 }
